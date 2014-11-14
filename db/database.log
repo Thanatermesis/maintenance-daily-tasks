@@ -1,0 +1,9 @@
+D, [2014-11-14T16:15:46.787523 #5712] DEBUG -- :   [1m[36m (100.6ms)[0m  [1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
+D, [2014-11-14T16:15:46.854324 #5712] DEBUG -- :   [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."name" = 'Task 1' LIMIT 1
+D, [2014-11-14T16:15:46.862070 #5712] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2014-11-14T16:15:46.869530 #5712] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  INSERT INTO "tasks" ("name") VALUES (?)  [["name", "Task 1"]]
+D, [2014-11-14T16:15:46.965313 #5712] DEBUG -- :   [1m[36m (95.2ms)[0m  [1mcommit transaction[0m
+D, [2014-11-14T16:15:46.966629 #5712] DEBUG -- :   [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."name" = 'Task 2' LIMIT 1
+D, [2014-11-14T16:15:46.967441 #5712] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-14T16:15:46.968601 #5712] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name") VALUES (?)  [["name", "Task 2"]]
+D, [2014-11-14T16:15:47.065576 #5712] DEBUG -- :   [1m[36m (96.6ms)[0m  [1mcommit transaction[0m
