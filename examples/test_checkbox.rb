@@ -30,7 +30,8 @@ end
 
 # Main Window
 win = elm_win_add(nil, "Checkbox Test", 0)
-elm_win_title_set(win, "Test of Checkbox functions")
+
+elm_win_title_set(win, "#{win.class}")
 elm_win_autodel_set(win, true)
 elm_policy_set( Efl::Native.enum_type(:elm_policy)[:elm_policy_quit],
                Efl::Native.enum_type(:elm_policy_quit)[:elm_policy_quit_last_window_closed])
