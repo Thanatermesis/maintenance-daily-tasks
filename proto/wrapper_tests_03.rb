@@ -76,6 +76,7 @@ class Window
 
   def position
     #x, y = elm_win_screen_position_get(win)
+    # wtf? this function not works?
     evas_object_move(@win, 229, 50)
 
     x = FFI::MemoryPointer.new :int
@@ -84,14 +85,14 @@ class Window
     puts [ x.read_int, y.read_int ]
   end
 
-  def button_add=(text)
-    @btn = elm_button_add(@win)
-    elm_object_part_text_set(@btn, nil, text)
-    evas_object_smart_callback_add(@btn, "clicked", method(:on_click), nil)
-    evas_object_resize(@btn, 120, 30)
-    evas_object_move(@btn, 60, 15)
-    evas_object_show(@btn)
-  end
+  #def button_add=(text)
+    #@btn = elm_button_add(@win)
+    #elm_object_part_text_set(@btn, nil, text)
+    #evas_object_smart_callback_add(@btn, "clicked", method(:on_click), nil)
+    #evas_object_resize(@btn, 120, 30)
+    #evas_object_move(@btn, 60, 15)
+    #evas_object_show(@btn)
+  #end
 
 end
 
@@ -109,7 +110,7 @@ win.title = "foo"
 
 
 #win.button_add
-win.button_add("mybutton")
+#win.button_add("mybutton")
 
 #puts win.title_get
 puts win.title
