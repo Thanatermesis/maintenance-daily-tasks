@@ -18,13 +18,14 @@ class Node
   attr_reader :children
 
   def initialize(specs={})
-    @specs = {}
+    @specs = {} if not @specs
     specs.each{ |k,v| @specs[k] = specs[k] }
     @children = []        
   end
 
   def add_child(child)
     @children << child
+    child.parent = self if child.parent != self
   end
 
   def parent
@@ -33,13 +34,12 @@ class Node
   
   def parent=(new_parent)
     @specs[:parent]=new_parent
+    new_parent.add_child(self) if not new_parent.children.include?(self)
   end
 
   def add_to(new_parent)
-    self.parent= new_parent
-    parent.add_child(self)
+    new_parent.add_child(self)
   end
-
 
 end
 
