@@ -2,8 +2,6 @@
 
 require_relative 'proto_helper'
 
-puts File.expand_path('../../lib', __FILE__)
-
 win = Window.new({xsize:500})
 win.title="Ala ma kota"
 win.ysize=500
