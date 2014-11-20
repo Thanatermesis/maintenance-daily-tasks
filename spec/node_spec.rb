@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Node' do 
+describe 'Node.new' do 
   subject { Node.new }
   it { is_expected.to respond_to(:children, :add_child, :parent, :add_to) }
   describe "#add_child" do 
