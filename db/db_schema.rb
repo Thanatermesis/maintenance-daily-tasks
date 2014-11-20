@@ -5,3 +5,4 @@ ActiveRecord::Schema.define do
     table.column :name, :string
   end
 end
+
