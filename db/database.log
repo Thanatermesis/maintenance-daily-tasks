@@ -1,9 +1,21 @@
-D, [2014-11-14T16:15:46.787523 #5712] DEBUG -- :   [1m[36m (100.6ms)[0m  [1mCREATE TABLE "tasks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255)) [0m
-D, [2014-11-14T16:15:46.854324 #5712] DEBUG -- :   [1m[35mTask Load (0.3ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."name" = 'Task 1' LIMIT 1
-D, [2014-11-14T16:15:46.862070 #5712] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
-D, [2014-11-14T16:15:46.869530 #5712] DEBUG -- :   [1m[35mSQL (1.4ms)[0m  INSERT INTO "tasks" ("name") VALUES (?)  [["name", "Task 1"]]
-D, [2014-11-14T16:15:46.965313 #5712] DEBUG -- :   [1m[36m (95.2ms)[0m  [1mcommit transaction[0m
-D, [2014-11-14T16:15:46.966629 #5712] DEBUG -- :   [1m[35mTask Load (0.2ms)[0m  SELECT  "tasks".* FROM "tasks"  WHERE "tasks"."name" = 'Task 2' LIMIT 1
-D, [2014-11-14T16:15:46.967441 #5712] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-D, [2014-11-14T16:15:46.968601 #5712] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("name") VALUES (?)  [["name", "Task 2"]]
-D, [2014-11-14T16:15:47.065576 #5712] DEBUG -- :   [1m[36m (96.6ms)[0m  [1mcommit transaction[0m
+D, [2014-11-21T18:19:09.534951 #12857] DEBUG -- :   [1m[36mFicha Load (0.3ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Acoplo para turbina' LIMIT 1[0m
+D, [2014-11-21T18:19:09.542858 #12857] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2014-11-21T18:19:09.550942 #12857] DEBUG -- :   [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Acoplo para turbina"]]
+D, [2014-11-21T18:19:09.678301 #12857] DEBUG -- :   [1m[35m (126.8ms)[0m  commit transaction
+D, [2014-11-21T18:19:09.679831 #12857] DEBUG -- :   [1m[36mFicha Load (0.3ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Aspirador de secreciones' LIMIT 1[0m
+D, [2014-11-21T18:19:09.680681 #12857] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2014-11-21T18:19:09.681788 #12857] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Aspirador de secreciones"]]
+D, [2014-11-21T18:19:09.813223 #12857] DEBUG -- :   [1m[35m (131.0ms)[0m  commit transaction
+D, [2014-11-21T18:19:09.814408 #12857] DEBUG -- :   [1m[36mFicha Load (0.3ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Lavadora desinfectadora' LIMIT 1[0m
+D, [2014-11-21T18:19:09.815008 #12857] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-21T18:19:09.816033 #12857] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Lavadora desinfectadora"]]
+D, [2014-11-21T18:19:09.946505 #12857] DEBUG -- :   [1m[35m (130.1ms)[0m  commit transaction
+D, [2014-11-21T18:19:09.947648 #12857] DEBUG -- :   [1m[36mFicha Load (0.2ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Baño María' LIMIT 1[0m
+D, [2014-11-21T18:19:09.948245 #12857] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-21T18:19:09.949321 #12857] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Baño María"]]
+D, [2014-11-21T18:19:10.080423 #12857] DEBUG -- :   [1m[35m (130.6ms)[0m  commit transaction
+D, [2014-11-21T18:19:10.082544 #12857] DEBUG -- :   [1m[36mFicha Load (0.5ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Secadora industrial' LIMIT 1[0m
+D, [2014-11-21T18:19:10.083640 #12857] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2014-11-21T18:19:10.085166 #12857] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Secadora industrial"]]
+D, [2014-11-21T18:19:10.214056 #12857] DEBUG -- :   [1m[35m (128.4ms)[0m  commit transaction
+D, [2014-11-21T18:19:10.216136 #12857] DEBUG -- :   [1m[36mFicha Load (0.5ms)[0m  [1mSELECT  "fichas".* FROM "fichas"  WHERE "fichas"."nombre" = 'Secadora industrial' LIMIT 1[0m

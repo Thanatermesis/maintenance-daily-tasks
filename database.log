@@ -1,1 +1,0 @@
-D, [2014-11-21T16:41:54.612197 #11379] DEBUG -- :   [1m[36mTask Load (2.9ms)[0m  [1mSELECT "tasks".* FROM "tasks"[0m

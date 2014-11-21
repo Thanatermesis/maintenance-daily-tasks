@@ -5,6 +5,11 @@ require 'yaml'
 require 'active_record'
 
 require_relative '../../db/db_config'
-require_relative '../models/task'
+
+# Requires all files .rb in ./app/models 
+Dir.glob('./app/models/*.rb').each do |file|
+    require file
+end
+#require_relative '../models/task'
 
 require 'node'
