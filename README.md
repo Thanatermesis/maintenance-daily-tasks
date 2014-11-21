@@ -1,4 +1,12 @@
 maintenance-daily-tasks
 =======================
 
-This is a useless application to show a list ot tasks to do each day, statically assigned
+    ruby app/bin/view_tasks.rb
+
+## Crear bd
+
+    ruby app/bin/db_create.rb
+
+## Seed db
+
+    ruby app/bin/db_seeds.rb
