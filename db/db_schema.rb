@@ -9,8 +9,13 @@ ActiveRecord::Schema.define do
   end
 
   create_table :mantenimientos do |table|
+    table.column :ficha_id, :integer
+    table.column :periodicidad, :string
+  end
+
+  create_table :accions do |table|
+    table.column :mantenimiento_id, :integer
     table.column :equipo_id, :integer
-    table.column :peridicidad, :string
   end
 
 end

@@ -4,6 +4,6 @@ require 'ficha'
 
 describe 'Ficha.new' do 
   subject { Ficha.new }
-  it { is_expected.to respond_to(:nombre) }
+  it { is_expected.to respond_to(:nombre, :equipos, :mantenimientos) }
 end
 
