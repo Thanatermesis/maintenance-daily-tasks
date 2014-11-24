@@ -10,6 +10,7 @@ ActiveRecord::Schema.define do
 
   create_table :mantenimientos do |table|
     table.column :ficha_id, :integer
+    table.column :descripcion, :integer
     table.column :periodicidad, :string
   end
 
