@@ -10,6 +10,5 @@ require_relative '../../db/db_config'
 Dir.glob('./app/models/*.rb').each do |file|
     require file
 end
-#require_relative '../models/task'
 
 require 'node'

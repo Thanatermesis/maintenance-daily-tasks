@@ -6,3 +6,7 @@ gem 'ffi-efl'
 
 gem 'sqlite3'
 gem 'activerecord'
+gem 'rspec'
+gem 'database_cleaner'
+
+gem "factory_girl", "~> 4.0"

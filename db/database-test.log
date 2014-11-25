@@ -1,0 +1,293 @@
+D, [2014-11-25T17:59:14.326721 #31113] DEBUG -- :   [1m[36m (125.8ms)[0m  [1mDELETE FROM "fichas";[0m
+D, [2014-11-25T17:59:14.327301 #31113] DEBUG -- :   [1m[35m (0.3ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2014-11-25T17:59:14.327705 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'fichas';[0m
+D, [2014-11-25T17:59:14.460494 #31113] DEBUG -- :   [1m[35m (132.4ms)[0m  DELETE FROM "equipos";
+D, [2014-11-25T17:59:14.461399 #31113] DEBUG -- :   [1m[36m (0.5ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2014-11-25T17:59:14.462106 #31113] DEBUG -- :   [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'equipos';
+D, [2014-11-25T17:59:14.583027 #31113] DEBUG -- :   [1m[36m (120.4ms)[0m  [1mDELETE FROM "mantenimientos";[0m
+D, [2014-11-25T17:59:14.583922 #31113] DEBUG -- :   [1m[35m (0.4ms)[0m  SELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';
+D, [2014-11-25T17:59:14.584645 #31113] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mDELETE FROM sqlite_sequence where name = 'mantenimientos';[0m
+D, [2014-11-25T17:59:14.694495 #31113] DEBUG -- :   [1m[35m (109.3ms)[0m  DELETE FROM "accions";
+D, [2014-11-25T17:59:14.695386 #31113] DEBUG -- :   [1m[36m (0.4ms)[0m  [1mSELECT name FROM sqlite_master WHERE type='table' AND name='sqlite_sequence';[0m
+D, [2014-11-25T17:59:14.696097 #31113] DEBUG -- :   [1m[35m (0.3ms)[0m  DELETE FROM sqlite_sequence where name = 'accions';
+D, [2014-11-25T17:59:14.696937 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.697449 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  commit transaction
+D, [2014-11-25T17:59:14.698072 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.713906 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.769087 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 1' LIMIT 1[0m
+D, [2014-11-25T17:59:14.771206 #31113] DEBUG -- :   [1m[35mSQL (0.4ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 1"]]
+D, [2014-11-25T17:59:14.771915 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.788551 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.797256 #31113] DEBUG -- :   [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-10-08"]]
+D, [2014-11-25T17:59:14.798043 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.802486 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.804322 #31113] DEBUG -- :   [1m[35mFicha Exists (0.2ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 2' LIMIT 1
+D, [2014-11-25T17:59:14.805446 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 2"]]
+D, [2014-11-25T17:59:14.806050 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.815352 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.817807 #31113] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 2837"], ["ficha_id", 2], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.818454 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.819620 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.821281 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 3' LIMIT 1[0m
+D, [2014-11-25T17:59:14.822327 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 3"]]
+D, [2014-11-25T17:59:14.822887 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.824654 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.826450 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 4' LIMIT 1[0m
+D, [2014-11-25T17:59:14.827546 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 4"]]
+D, [2014-11-25T17:59:14.828164 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.829901 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.831664 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 4], ["instalacion", "2014-06-28"]]
+D, [2014-11-25T17:59:14.832233 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.833873 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.835592 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 4], ["instalacion", "2014-07-08"]]
+D, [2014-11-25T17:59:14.836158 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.837779 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.839507 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 4], ["instalacion", "2014-01-16"]]
+D, [2014-11-25T17:59:14.840063 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.841834 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.843594 #31113] DEBUG -- :   [1m[35mFicha Exists (0.2ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 5' LIMIT 1
+D, [2014-11-25T17:59:14.844691 #31113] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 5"]]
+D, [2014-11-25T17:59:14.845286 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.846994 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.848696 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 5], ["instalacion", "2014-07-19"]]
+D, [2014-11-25T17:59:14.849261 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.850928 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.852621 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 5], ["instalacion", "2014-01-24"]]
+D, [2014-11-25T17:59:14.853181 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.854812 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.856483 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 5], ["instalacion", "2014-04-16"]]
+D, [2014-11-25T17:59:14.857039 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.858789 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.860517 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 8698"], ["ficha_id", 5], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.861157 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.862914 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.864660 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 1722"], ["ficha_id", 5], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.865246 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.866981 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.868719 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 2948"], ["ficha_id", 5], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.869299 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.871077 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.872855 #31113] DEBUG -- :   [1m[35mFicha Exists (0.2ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 6' LIMIT 1
+D, [2014-11-25T17:59:14.873944 #31113] DEBUG -- :   [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 6"]]
+D, [2014-11-25T17:59:14.874577 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.876340 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.878081 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 1648"], ["ficha_id", 6], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.878699 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.880407 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.882140 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 9649"], ["ficha_id", 6], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.882756 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.884454 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.886184 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 332"], ["ficha_id", 6], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:14.886814 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.887413 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2014-11-25T17:59:14.890653 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.890940 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:14.891274 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.904488 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2014-11-25T17:59:14.905654 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.905960 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:14.906322 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:14.908115 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.910039 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 7' LIMIT 1[0m
+D, [2014-11-25T17:59:14.911362 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 7"]]
+D, [2014-11-25T17:59:14.911983 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.912824 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.914449 #31113] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-05-08"]]
+D, [2014-11-25T17:59:14.915023 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.915888 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:14.917229 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2014-11-25T17:59:14.917540 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:14.917870 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:14.918962 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.920418 #31113] DEBUG -- :   [1m[35mFicha Exists (0.2ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 8' LIMIT 1
+D, [2014-11-25T17:59:14.921547 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 8"]]
+D, [2014-11-25T17:59:14.922141 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.923974 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.925879 #31113] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-01-28"]]
+D, [2014-11-25T17:59:14.926520 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.928238 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.929972 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-07-31"]]
+D, [2014-11-25T17:59:14.930604 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:14.932474 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.934520 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-01-22"]]
+D, [2014-11-25T17:59:14.935201 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.985692 #31113] DEBUG -- :   [1m[35mEquipo Load (0.3ms)[0m  SELECT "equipos".* FROM "equipos"  WHERE "equipos"."ficha_id" = ?  [["ficha_id", 1]]
+D, [2014-11-25T17:59:14.992690 #31113] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:14.994398 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  begin transaction
+D, [2014-11-25T17:59:14.994711 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:14.995035 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:14.996548 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:14.998446 #31113] DEBUG -- :   [1m[35mFicha Exists (0.3ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 9' LIMIT 1
+D, [2014-11-25T17:59:14.999675 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 9"]]
+D, [2014-11-25T17:59:15.000297 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.002027 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.003938 #31113] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-07-21"]]
+D, [2014-11-25T17:59:15.004577 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.006293 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.008052 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-08-13"]]
+D, [2014-11-25T17:59:15.008620 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.010288 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.011985 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-08-11"]]
+D, [2014-11-25T17:59:15.012556 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.014208 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.016197 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-03-31"]]
+D, [2014-11-25T17:59:15.016927 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.018836 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.020642 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-10-09"]]
+D, [2014-11-25T17:59:15.021219 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.022917 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.024632 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-07-18"]]
+D, [2014-11-25T17:59:15.025192 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.026844 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.028536 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-07-24"]]
+D, [2014-11-25T17:59:15.029109 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.030795 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.032517 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-03-27"]]
+D, [2014-11-25T17:59:15.033086 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.034751 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.036437 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)  [["ficha_id", 1], ["instalacion", "2014-04-09"]]
+D, [2014-11-25T17:59:15.037000 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.038639 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.040328 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "equipos" ("ficha_id", "instalacion") VALUES (?, ?)[0m  [["ficha_id", 1], ["instalacion", "2014-04-16"]]
+D, [2014-11-25T17:59:15.040881 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.042635 #31113] DEBUG -- :   [1m[36mEquipo Load (0.2ms)[0m  [1mSELECT "equipos".* FROM "equipos"  WHERE "equipos"."ficha_id" = ?[0m  [["ficha_id", 1]]
+D, [2014-11-25T17:59:15.044550 #31113] DEBUG -- :   [1m[35m (0.3ms)[0m  rollback transaction
+D, [2014-11-25T17:59:15.046965 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.047253 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:15.047575 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.048756 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.050680 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 10' LIMIT 1[0m
+D, [2014-11-25T17:59:15.051920 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 10"]]
+D, [2014-11-25T17:59:15.052553 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.053319 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2014-11-25T17:59:15.054272 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.054561 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:15.054880 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.056294 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.058132 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ala' LIMIT 1[0m
+D, [2014-11-25T17:59:15.059370 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ala"]]
+D, [2014-11-25T17:59:15.059979 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.062781 #31113] DEBUG -- :   [1m[35m (0.3ms)[0m  rollback transaction
+D, [2014-11-25T17:59:15.064014 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.064313 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:15.064634 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.065865 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.067743 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 11' LIMIT 1[0m
+D, [2014-11-25T17:59:15.068942 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 11"]]
+D, [2014-11-25T17:59:15.069540 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.070469 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.071769 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 12' LIMIT 1[0m
+D, [2014-11-25T17:59:15.072825 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 12"]]
+D, [2014-11-25T17:59:15.073366 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.074199 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.075500 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 13' LIMIT 1[0m
+D, [2014-11-25T17:59:15.076461 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 13"]]
+D, [2014-11-25T17:59:15.076985 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.077793 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.079144 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 14' LIMIT 1[0m
+D, [2014-11-25T17:59:15.080248 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 14"]]
+D, [2014-11-25T17:59:15.080931 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.081856 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.083285 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 15' LIMIT 1[0m
+D, [2014-11-25T17:59:15.084312 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 15"]]
+D, [2014-11-25T17:59:15.084859 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.085688 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.086977 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 16' LIMIT 1[0m
+D, [2014-11-25T17:59:15.087918 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 16"]]
+D, [2014-11-25T17:59:15.088448 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.089252 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.090513 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 17' LIMIT 1[0m
+D, [2014-11-25T17:59:15.091458 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 17"]]
+D, [2014-11-25T17:59:15.091985 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.092817 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.094064 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 18' LIMIT 1[0m
+D, [2014-11-25T17:59:15.095023 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 18"]]
+D, [2014-11-25T17:59:15.095544 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.096345 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.097578 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 19' LIMIT 1[0m
+D, [2014-11-25T17:59:15.098521 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 19"]]
+D, [2014-11-25T17:59:15.099038 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.099831 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.101047 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 20' LIMIT 1[0m
+D, [2014-11-25T17:59:15.101959 #31113] DEBUG -- :   [1m[35mSQL (0.1ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 20"]]
+D, [2014-11-25T17:59:15.102515 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.103264 #31113] DEBUG -- :   [1m[35mFicha Load (0.2ms)[0m  SELECT "fichas".* FROM "fichas"
+D, [2014-11-25T17:59:15.104468 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.106479 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.106766 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.107078 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.108563 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.110074 #31113] DEBUG -- :   [1m[35mFicha Exists (0.2ms)[0m  SELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 21' LIMIT 1
+D, [2014-11-25T17:59:15.111317 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "fichas" ("nombre") VALUES (?)[0m  [["nombre", "Ficha nr 21"]]
+D, [2014-11-25T17:59:15.111913 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.112849 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.114663 #31113] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 4872"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.115237 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.115967 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  rollback transaction
+D, [2014-11-25T17:59:15.117074 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.117348 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  commit transaction
+D, [2014-11-25T17:59:15.117714 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+D, [2014-11-25T17:59:15.119224 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.121164 #31113] DEBUG -- :   [1m[36mFicha Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "fichas"  WHERE "fichas"."nombre" = 'Ficha nr 22' LIMIT 1[0m
+D, [2014-11-25T17:59:15.122418 #31113] DEBUG -- :   [1m[35mSQL (0.3ms)[0m  INSERT INTO "fichas" ("nombre") VALUES (?)  [["nombre", "Ficha nr 22"]]
+D, [2014-11-25T17:59:15.123039 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.124826 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.126741 #31113] DEBUG -- :   [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 5385"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.127345 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.129068 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.130851 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 4502"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.131456 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.133160 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.134930 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 2298"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.135520 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.137230 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.139001 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 3298"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.139587 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.141514 #31113] DEBUG -- :   [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.143534 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 4053"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.144243 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.146068 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.147948 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 8684"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.148546 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.150304 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.152061 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 5036"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.152640 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.154356 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.156083 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 117"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.156664 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.158366 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.160095 #31113] DEBUG -- :   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)[0m  [["descripcion", "lavar tapa 6337"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.160679 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+D, [2014-11-25T17:59:15.162407 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.164132 #31113] DEBUG -- :   [1m[35mSQL (0.2ms)[0m  INSERT INTO "mantenimientos" ("descripcion", "ficha_id", "periodicidad") VALUES (?, ?, ?)  [["descripcion", "lavar tapa 6279"], ["ficha_id", 1], ["periodicidad", "Ms"]]
+D, [2014-11-25T17:59:15.164731 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+D, [2014-11-25T17:59:15.167901 #31113] DEBUG -- :   [1m[35mMantenimiento Load (0.3ms)[0m  SELECT "mantenimientos".* FROM "mantenimientos"  WHERE "mantenimientos"."ficha_id" = ?  [["ficha_id", 1]]
+D, [2014-11-25T17:59:15.169893 #31113] DEBUG -- :   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.172220 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.172518 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.172835 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.173424 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.174113 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.174431 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.174752 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.182261 #31113] DEBUG -- :   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.183193 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.183509 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.183870 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.184516 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.185345 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.185654 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.185974 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.186576 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.187195 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.187465 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.187782 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.188298 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.189037 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.189311 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.189617 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.190157 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+D, [2014-11-25T17:59:15.190760 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.191025 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+D, [2014-11-25T17:59:15.191336 #31113] DEBUG -- :   [1m[35m (0.1ms)[0m  begin transaction
+D, [2014-11-25T17:59:15.191855 #31113] DEBUG -- :   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
