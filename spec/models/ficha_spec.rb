@@ -32,4 +32,9 @@ end
 describe "ficha con equipos y mantenimientos" do 
   let(:ficha) { FactoryGirl.create(:ficha_with_equipos_and_mantenimientos) }
   subject {ficha}
+  it "should have 3 equipos and 3 mantenimientos" do 
+    expect(ficha.equipos.length).to be(3)
+    expect(ficha.mantenimientos.length).to be(2)
+  end
+
 end

@@ -2,13 +2,19 @@ FactoryGirl.define do
   
   factory :equipo do 
     ficha
-    instalacion {Date.new(2014,1,1) + rand(300)}
+    instalacion {Date.new(2014,1,1) + rand(100)}
   end
 
   factory :mantenimiento do 
     ficha
     descripcion { "lavar tapa #{rand(10000)}" }
-    periodicidad "Ms"
+    periodicidad "mensual"
+  end
+
+  factory :accion do 
+    equipo
+    mantenimiento
+    fecha {Date.new(2014,5,1) + rand(100)}
   end
 
   factory :ficha do
@@ -27,7 +33,7 @@ FactoryGirl.define do
 
       factory :ficha_with_equipos_and_mantenimientos do 
         transient do
-          mantenimientos_count 3
+          mantenimientos_count 2
         end
 
         after(:create) do |ficha, evaluator|

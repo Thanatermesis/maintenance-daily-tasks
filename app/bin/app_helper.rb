@@ -3,6 +3,7 @@ $LOAD_PATH << File.expand_path('../../../lib', __FILE__)
 
 require 'yaml'
 require 'active_record'
+require 'active_support'
 
 require_relative '../../db/db_config'
 
