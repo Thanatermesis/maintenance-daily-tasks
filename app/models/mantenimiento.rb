@@ -2,7 +2,8 @@ class Mantenimiento < ActiveRecord::Base
 
   PERIODICIDAD = [["Semanal","semanal"], ["Mensual","mensual"], ["Semestral", "semestral"]]
 
-  NEXT_ACTION = {"semanal"=> 1.week, "mensual"=> 1.month, "semestral" => 6.months}
+  NEXT_ACTION = {"semanal"=> 1.week, "mensual"=> 1.month, "semestral" => 6.months,
+                "anual" => 1.year }
 
 
   belongs_to :ficha

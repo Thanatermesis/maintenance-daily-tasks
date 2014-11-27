@@ -27,12 +27,7 @@ class Equipo < ActiveRecord::Base
     self.datetime_of_last_action(mantenimiento).to_date
   end
 
-  def next_accion(mantenimiento, from=Date.today, till=nil)
-    if !till
-      till = from
-    end
-    scheduled = []
-    last_date = self.date_of_last_action(mantenimiento)
-
+  def date_of_next_accion(mantenimiento)
+    sef.date_of_last_action(mantenimiento) + mantenimiento.waiting_time
   end
 end

@@ -5,7 +5,6 @@ RSpec.describe Equipo do
   let(:accion) { FactoryGirl.create(:accion) }
   let(:mantenimiento) { FactoryGirl.create(:mantenimiento, periodicidad: "semanal") }
   let(:mantenimiento2) { FactoryGirl.create(:mantenimiento, periodicidad: "semestral") }
-  let(:mantenimiento3) { FactoryGirl.create(:mantenimiento, periodicidad: "anual") }
   let(:equipo2) { FactoryGirl.create(:equipo, instalacion: Date.new(2012,1,1)) }
   before {
     @accion2 = 
@@ -50,16 +49,46 @@ RSpec.describe Equipo do
            equipo: equipo2, mantenimiento: mantenimiento, fecha:DateTime.new(2012,03,01,12,30)) 
     }
     it "is expected to have last accion date well defined" do 
-      expect(equipo2.datetime_of_last_action(mantenimiento)).to  eq(DateTime.new(2012,03,01,12,30))
-      expect(equipo2.date_of_last_action(mantenimiento)).to  eq(Date.new(2012,03,01))
+      expect(equipo2.datetime_of_last_action(mantenimiento)).
+        to  eq(DateTime.new(2012,03,01,12,30))
+      expect(equipo2.date_of_last_action(mantenimiento)).
+        to  eq(Date.new(2012,03,01))
     end
     it "is expected to return instalacion date if no accions assosiated" do 
-      expect(equipo2.date_of_last_action(mantenimiento3)).to  eq(Date.new(2012,03,01))
+      @equipo = FactoryGirl.create(:equipo, instalacion: Date.today+rand(200))
+      @mantenimiento3 =FactoryGirl.create(:mantenimiento, periodicidad: "anual") 
+      expect(@equipo.date_of_last_action(@mantenimiento3)).
+        to  eq(@equipo.instalacion)
     end
   end
 
-  describe "#next_action" do 
-    
+  describe "#date_of_next_action" do 
+    before {
+      @equipo = FactoryGirl.create(:equipo, instalacion: Date.today+rand(200))
+      @mantenimiento3 =FactoryGirl.create(:mantenimiento, periodicidad: "anual") 
+    }
+
+    it "is expected to return date #instalacion + 1.year, if no accions associated" do 
+       expect(@equipo.date_of_next_accion(@mantenimiento3)).
+        to  eq(@equipo.instalacion+1.year)
+    end
+
+    it "is expected to return date of last accion +1 year" do 
+      @fecha1 = Date.today+1.year+rand(50)
+      @fecha2 = @fecha1+1.year+rand(50)
+      @accion31 = FactoryGirl.create(:accion, 
+          {equipo: @equipo, 
+           mantenimiento: @mantenimiento3, 
+           fecha: @fecha1})
+      @accion32 = FactoryGirl.create(:accion, 
+          {equipo: @equipo, 
+           mantenimiento: @mantenimiento3, 
+           fecha: @fecha2})
+
+       expect(@equipo.date_of_next_accion(@mantenimiento3)).
+        to  eq(@fecha2+1.year)
+    end
+
   end
     # describe "Accion#next_action" do
     #   it "is expect to have next mantenimiento en una semana" do 
