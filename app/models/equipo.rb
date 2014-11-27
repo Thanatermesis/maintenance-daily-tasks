@@ -6,6 +6,13 @@ class Equipo < ActiveRecord::Base
     self.ficha.mantenimientos
   end
   
+  def add_accion(mantenimiento, ac_fecha = nil)
+    if !ac_fecha
+      ac_fecha = DateTime.now
+    end
+    Accion.create(equipo: self, mantenimiento: mantenimiento, fecha: ac_fecha)
+  end
+
   def get_actions(mantenimiento)
     self.accions.select{ |a| a.mantenimiento == mantenimiento } 
   end
@@ -28,6 +35,28 @@ class Equipo < ActiveRecord::Base
   end
 
   def date_of_next_accion(mantenimiento)
-    sef.date_of_last_action(mantenimiento) + mantenimiento.waiting_time
+    self.date_of_last_action(mantenimiento) + mantenimiento.waiting_time
+  end
+
+  def self.dates_of_next_accions
+    self.all.reduce({}) do |he,e|
+      he[e] = e.mantenimientos.reduce({}) do | hm, m |
+        hm[m]=e.date_of_next_accion(m)
+        hm
+      end
+      he
+    end
+  end
+
+  def self.pending_accions(date)
+    nas = self.dates_of_next_accions
+    nas.keys.reduce({}) do |he,e|
+      he_temp = nas[e].keys.reduce({}) do | hm, m |
+        hm[m]=nas[e][m] if nas[e][m]<date
+        hm
+      end
+      he[e] = he_temp if he_temp != {}
+      he
+    end 
   end
 end

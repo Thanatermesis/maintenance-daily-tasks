@@ -90,15 +90,6 @@ RSpec.describe Equipo do
     end
 
   end
-    # describe "Accion#next_action" do
-    #   it "is expect to have next mantenimiento en una semana" do 
-    #     expect(accion.next_action).to eq(accion.fecha+1.week)
-    #   end
-    #   it "is expect to have otro en dos semana" do 
-    #     expect(accion.next_action(2)).to eq(accion.fecha+2.week)
-    #   end
-      
-    # end
     
 end
 

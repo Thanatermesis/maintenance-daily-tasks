@@ -7,11 +7,26 @@ require 'equipo'
 describe Equipo do 
 
   context "nuevo" do 
-    let(:equipo) { FactoryGirl.create(:equipo) }
+    let(:equipo) { Equipo.create }
     subject { equipo }
     it { is_expected.to respond_to(:ficha, :instalacion, :accions, :mantenimientos) }
+
+
+    describe "#add_accion" do 
+      let(:mantenimiento) { FactoryGirl.create(:mantenimiento) }
+      it "is expected to add accion" do 
+        accion = equipo.add_accion(mantenimiento)
+        expect(equipo.accions).to include(accion)
+      end
+      it "is expected to add accion with special date" do 
+        fecha = Date.new(2015,1,1)
+        accion = equipo.add_accion(mantenimiento, fecha)
+        expect(accion.fecha).to eq(fecha)
+        expect(equipo.accions).to include(accion)
+      end
+    end
+
   end
-  
 end
 
 describe "ficha con equipos" do
