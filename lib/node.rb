@@ -20,7 +20,7 @@ class Node
   def initialize(specs={})
     @specs = {} if not @specs
     specs.each{ |k,v| @specs[k] = specs[k] }
-    @children = []        
+    @children = []
   end
 
   def add_child(child)
@@ -31,7 +31,7 @@ class Node
   def parent
     @specs[:parent]
   end
-  
+
   def parent=(new_parent)
     @specs[:parent]=new_parent
     new_parent.add_child(self) if not new_parent.children.include?(self)
@@ -74,8 +74,8 @@ class Window < Node
     elm_init(0, nil)
     @e_win = elm_win_add(nil, @specs[:app_name], 0)
     elm_win_autodel_set(@e_win, true)
-    elm_policy_set( 
-      Efl::Native.enum_type(:elm_policy)[:elm_policy_quit], 
+    elm_policy_set(
+      Efl::Native.enum_type(:elm_policy)[:elm_policy_quit],
       Efl::Native.enum_type(:elm_policy_quit)[:elm_policy_quit_last_window_closed])
     elm_object_focus_set(@e_win, true)
     self
@@ -110,7 +110,7 @@ class Window < Node
     @children.each { |c| c.e_init }
     self
   end
-  
+
   def e_update
     e_title
     e_resize
@@ -140,10 +140,10 @@ class Window < Node
     elm_win_screen_position_get @win, x, y
     [ x.read_int, y.read_int ]
   end
-  
+
 end
 
-class Widget < Node 
+class Widget < Node
   attr_reader :e_widget
 
   def initialize(new_parent=nil, specs= {})
@@ -226,14 +226,14 @@ class GenListItem < Widget
       itc_ptr = elm_genlist_item_class_new
       @itc = ElmGenItemClass.new(itc_ptr)
       @itc[:item_style] = FFI::MemoryPointer.from_string("default")
-      @itc[:text_get] = 
+      @itc[:text_get] =
         FFI::Function.new(:pointer, [:pointer, :pointer, :string]) { |data, *_|
-        ptr = FFI::MemoryPointer.from_string("XXX #{data.read_string}")
+        ptr = FFI::MemoryPointer.from_string("#{data.read_string}")
         ptr.autorelease = false
         ptr
       }
-      if @specs[:icon] 
-        @itc[:content_get] = 
+      if @specs[:icon]
+        @itc[:content_get] =
           FFI::Function.new(:pointer, [:pointer, :pointer, :string]) do
           |data, obj, part|
           ic = elm_icon_add(obj)
