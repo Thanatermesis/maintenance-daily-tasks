@@ -38,3 +38,7 @@ Gemfile.lock
 *~
 \#*
 .\#*
+
+
+# hospital
+db/hospital*.db
