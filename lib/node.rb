@@ -154,6 +154,17 @@ class Widget < Node
     super(specs)
   end
 
+  def e_init
+    @actions.each do |action, method|
+      evas_object_smart_callback_add(@e_widget, action, method, nil)
+    end
+  end
+
+  def add_action(action, &block)
+    method = lambda(&block)
+    @actions << [action, method]
+  end
+
 end
 
 class Button < Widget
@@ -161,17 +172,10 @@ class Button < Widget
   def e_init
     @e_widget = elm_button_add(parent.e_win)
     elm_object_part_text_set(e_widget, nil, @specs[:text])
-    @actions.each do |action, method|
-      evas_object_smart_callback_add(@e_widget, action, method, nil)
-    end
     evas_object_resize(@e_widget, 120, 30)
     evas_object_move(@e_widget, 60, 15)
     evas_object_show(@e_widget)
-  end
-
-  def add_action(action, &block)
-    method = lambda(&block)
-    @actions << [action, method]
+    super
   end
 
 end

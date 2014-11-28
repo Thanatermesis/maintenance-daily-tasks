@@ -23,7 +23,11 @@ glist  = GenList.new(win)
 
 tasks.keys.each do |e|
   tasks[e].keys.each do |m|
-    GenListItem2.new(glist, { text: "#{e.ficha.nombre}: #{m.descripcion}", icon: "home"})
+    entry = GenListItem.new(glist, { text: "#{e.ficha.nombre}: #{m.descripcion}", icon: "home"})
+
+    #entry.add_action("clicked") do |a|
+      #puts "#{m.descripcion}"
+    #end
   end
 end
 
