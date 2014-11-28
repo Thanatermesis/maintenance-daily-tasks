@@ -42,4 +42,7 @@ Gemfile.lock
 
 # hospital
 db/hospital*.db
-db/*.log
+db/*log
+db/database*log
+
+
