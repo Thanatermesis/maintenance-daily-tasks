@@ -4,7 +4,7 @@ class Mantenimiento < ActiveRecord::Base
                   ["Mensual","mensual"], ["Bimensual", "bimensual"],
                   ["Semestral", "semestral"], ["Anual","anual"]]
 
-  NEXT_ACTION = {"diaro"=>1.day, "semanal"=> 1.week, "mensual"=> 1.month, 
+  NEXT_ACTION = {"diario"=>1.day, "semanal"=> 1.week, "mensual"=> 1.month, 
                  "bimensual"=> 2.months, "semestral" => 6.months,
                 "anual" => 1.year }
 
