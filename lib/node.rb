@@ -177,8 +177,6 @@ class Button < Widget
 end
 
 
-
-
 class ElmGenItemClass < FFI::Struct
   layout  :version, :int,
   :refcount, :uint,
@@ -252,3 +250,4 @@ class GenListItem < Widget
          p [:selected, data.read_string] }, self.text)
   end
 end
+
