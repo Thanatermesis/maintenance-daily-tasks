@@ -1,8 +1,11 @@
 class Mantenimiento < ActiveRecord::Base
 
-  PERIODICIDAD = [["Semanal","semanal"], ["Mensual","mensual"], ["Semestral", "semestral"]]
+  PERIODICIDAD = [["Diario", "diario"],["Semanal","semanal"], 
+                  ["Mensual","mensual"], ["Bimensual", "bimensual"],
+                  ["Semestral", "semestral"], ["Anual","anual"]]
 
-  NEXT_ACTION = {"semanal"=> 1.week, "mensual"=> 1.month, "semestral" => 6.months,
+  NEXT_ACTION = {"diaro"=>1.day, "semanal"=> 1.week, "mensual"=> 1.month, 
+                 "bimensual"=> 2.months, "semestral" => 6.months,
                 "anual" => 1.year }
 
 
