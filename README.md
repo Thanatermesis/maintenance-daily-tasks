@@ -13,3 +13,10 @@ maintenance-daily-tasks
     ruby app/bin/db_seeds.rb
 
 ## rspec
+
+
+    sudo su postgres -c psql
+
+    CREATE USER management;
+    ALTER ROLE management WITH PASSWORD 'management';
+    CREATE DABTABASE hospital OWNER management;

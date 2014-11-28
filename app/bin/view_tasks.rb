@@ -1,5 +1,5 @@
 #! /usr/bin/env ruby
-# -*- coding: UTF-8 -*-
+# -*- coding: utf-8 -*-
 #
 require_relative 'app_helper'
 #
@@ -48,7 +48,7 @@ evas_object_show(li)
 
 
 
-tasks = Equipo.pending_accions(DateTime.now + 2.years)
+tasks = Equipo.pending_accions(DateTime.now)
 #p tasks
 
 tasks.keys.each do |e|

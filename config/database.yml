@@ -1,2 +1,5 @@
-adapter: sqlite3
-database: db/hospital.db
+adapter: postgresql
+host: localhost
+database: hospital
+username: management
+password: management

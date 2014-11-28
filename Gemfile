@@ -4,6 +4,7 @@ ruby '1.9.3'
 
 gem 'ffi-efl'
 
+gem 'pg'
 gem 'sqlite3'
 gem 'activerecord'
 gem 'rspec'
