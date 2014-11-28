@@ -25,7 +25,3 @@ mantenimientoCSV.each do |m|
   mantenimiento.periodicidad = Hash[Mantenimiento::PERIODICIDAD][m[4]]
   mantenimiento.save
 end
-
-
-
-
