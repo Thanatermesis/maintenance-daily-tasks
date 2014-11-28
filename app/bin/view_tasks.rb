@@ -71,7 +71,7 @@ tasks.keys.each do |e|
     elm_list_item_append(li, "#{e.ficha.nombre}", nil, ic2, method(:it_clicked), nil)
     evas_object_show(ic2)
 
-    e.add_action(m)
+    #e.add_action(m)
   #def add_accion(mantenimiento, ac_fecha = nil)
 
     #entry.add_action("clicked") do |a|
