@@ -16,7 +16,7 @@ mantenimientoCSV.each do |m|
     ficha = Ficha.get_or_create(m[1])
     equipo = Equipo.new
     equipo.ficha = ficha
-    equipo.instalacion = Date.new(2014,11,15)+rand(30)
+    equipo.instalacion = Date.new(2015,01,01)
     equipo.save
     mantenimiento = Mantenimiento.new
     mantenimiento.ficha = ficha
