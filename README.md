@@ -2,6 +2,7 @@ maintenance-daily-tasks
 =======================
 
 This application is meant to have a very simple and unique purpose:
+
     * to show everyday's tasks for the maintenance of machinery on an hospital
 
 It consists in showing a window with a list of tasks, when you click in the "task done" button the counter of this task is restarted to be shown the next time that is needed to be run
