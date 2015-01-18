@@ -14,7 +14,7 @@ maintenance-daily-tasks
 ### create tables schema
 
     bundler exec ruby app/bin/db_create.rb
-    # bundler exec ruby app/bin/db_create_test.rb  # only for tests
+    bundler exec ruby app/bin/db_create_test.rb  # for tests of rspec
 
 
 ## Fill / Seed the database
@@ -32,3 +32,6 @@ maintenance-daily-tasks
 
 ## rspec
 
+#### run tests
+
+    bundler exec rspec -fd
