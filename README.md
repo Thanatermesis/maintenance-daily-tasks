@@ -19,4 +19,4 @@ maintenance-daily-tasks
 
     CREATE USER management;
     ALTER ROLE management WITH PASSWORD 'management';
-    CREATE DABTABASE hospital OWNER management;
+    CREATE DATABASE hospital OWNER management;
