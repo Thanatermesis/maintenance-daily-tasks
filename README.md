@@ -3,8 +3,19 @@ maintenance-daily-tasks
 
 ## Create database
 
+### create the database in postgres first
+
+    sudo su postgres -c psql
+
+    CREATE USER management;
+    ALTER ROLE management WITH PASSWORD 'management';
+    CREATE DATABASE hospital OWNER management;
+
+### create tables schema
+
     bundler exec ruby app/bin/db_create.rb
     # bundler exec ruby app/bin/db_create_test.rb  # only for tests
+
 
 ## Fill / Seed the database
 
@@ -21,9 +32,3 @@ maintenance-daily-tasks
 
 ## rspec
 
-
-    sudo su postgres -c psql
-
-    CREATE USER management;
-    ALTER ROLE management WITH PASSWORD 'management';
-    CREATE DATABASE hospital OWNER management;
