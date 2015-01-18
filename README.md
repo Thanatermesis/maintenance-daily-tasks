@@ -1,17 +1,23 @@
 maintenance-daily-tasks
 =======================
 
-    ruby app/bin/view_tasks.rb
+## Create database
 
-## Crear bd
+    bundler exec ruby app/bin/db_create.rb
+    # bundler exec ruby app/bin/db_create_test.rb  # only for tests
 
-    ruby app/bin/db_create.rb
-    # ruby app/bin/db_create_test.rb  # only for tests
+## Fill / Seed the database
 
-## Seed db
+    # bundler exec ruby app/bin/db_seeds.rb  # old, wrong
+    bundler exec ruby app/bin/db_seeds2.rb
 
-    # ruby app/bin/db_seeds.rb  # old, wrong
-    ruby app/bin/db_seeds2.rb
+## Launching the application:
+
+    bundler exec ruby app/bin/view_tasks.rb
+
+## Special Notes:
+    * ack-grep luxes: this is a workaround for a wrong entry
+    * "instalacion" in db_seeds2.rb contains the installation date of the equipment, this must be UPDATED before the real use
 
 ## rspec
 
