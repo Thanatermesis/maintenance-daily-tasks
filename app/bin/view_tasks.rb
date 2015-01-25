@@ -57,7 +57,11 @@ tasks.keys.each do |e|
     eval %Q{
     def bt_clicked_#{e.id}_#{m.id} data, object, event
       puts "button clicked #{e.id} #{m.id}"
-      #{e}.add_accion(#{m})
+      equipo = Equipo.find(#{e.id})
+      mantenimiento = Mantenimiento.find(#{m.id})
+      puts equipo.datetime_of_last_action(mantenimiento)
+      equipo.add_accion(mantenimiento)
+      puts equipo.datetime_of_last_action(mantenimiento)
     end
     }
 

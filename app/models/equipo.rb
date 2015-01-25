@@ -54,8 +54,6 @@ class Equipo < ActiveRecord::Base
       he_temp = nas[e].keys.reduce({}) do | hm, m |
         if nas[e][m]<date
           hm[m]=nas[e][m]
-          puts date
-          puts nas[e][m]
         end
         hm
       end
