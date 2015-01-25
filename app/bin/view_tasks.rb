@@ -53,7 +53,7 @@ tasks.keys.each do |e|
       #p event
       #p target
     #end
-    
+
     eval %Q{
     def bt_clicked_#{e.id}_#{m.id} data, object, event
       puts "button clicked #{e.id} #{m.id}"
@@ -76,7 +76,7 @@ tasks.keys.each do |e|
     evas_object_smart_callback_add(ic2, "clicked", method("bt_clicked_#{e.id}_#{m.id}".to_sym), nil)
     #evas_object_smart_callback_add(ic2, "clicked", method(:button_clicked, nil)
     evas_object_propagate_events_set(ic2, false)
-    elm_list_item_append(li, "#{e.ficha.nombre}: #{m.descripcion}", nil, ic2, method(:it_clicked), nil)
+    elm_list_item_append(li, "#{e.ficha.nombre}: #{m.descripcion} | Ubicación: (null)", nil, ic2, method(:it_clicked), nil)
     evas_object_show(ic2)
 
     #e.add_action(m)
@@ -91,7 +91,7 @@ end
 
 
 
-evas_object_resize(win, 200, 300)
+evas_object_resize(win, 700, 760)
 evas_object_show(win)
 
 elm_run
