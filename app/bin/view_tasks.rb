@@ -12,14 +12,6 @@ require 'efl/elm/elm_list'
 #
 include Efl::Native
 
-def bt_clicked data, object, event
-  puts "button clicked"
-end
-
-def it_clicked data, object, event
-  puts "item clicked"
-end
-
 
 
 elm_init 0, FFI::MemoryPointer::NULL
@@ -48,7 +40,7 @@ evas_object_show(li)
 
 
 
-tasks = Equipo.pending_accions(DateTime.now)
+tasks = Equipo.pending_accions(Date.today)
 #p tasks
 
 tasks.keys.each do |e|
@@ -61,14 +53,26 @@ tasks.keys.each do |e|
       #p event
       #p target
     #end
+    
+    eval %Q{
+    def bt_clicked_#{e.id}_#{m.id} data, object, event
+      puts "button clicked #{e.id} #{m.id}"
+      #{e}.add_accion(#{m})
+    end
+    }
+
+    def it_clicked data, object, event
+      puts "item clicked 2"
+    end
+
 
     #entry = GenListItem.new(glist, { text: "#{e.ficha.nombre}: #{m.descripcion}", icon: "home", button: "wombat"})
     ic2 = elm_button_add(win)
     elm_object_part_text_set(ic2, nil, "Tarea Completada")
-    evas_object_smart_callback_add(ic2, "clicked", method(:bt_clicked), nil)
+    evas_object_smart_callback_add(ic2, "clicked", method("bt_clicked_#{e.id}_#{m.id}".to_sym), nil)
     #evas_object_smart_callback_add(ic2, "clicked", method(:button_clicked, nil)
     evas_object_propagate_events_set(ic2, false)
-    elm_list_item_append(li, "#{e.ficha.nombre}", nil, ic2, method(:it_clicked), nil)
+    elm_list_item_append(li, "#{e.ficha.nombre}: #{m.descripcion}", nil, ic2, method(:it_clicked), nil)
     evas_object_show(ic2)
 
     #e.add_action(m)

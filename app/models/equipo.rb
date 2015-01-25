@@ -52,7 +52,11 @@ class Equipo < ActiveRecord::Base
     nas = self.dates_of_next_accions
     nas.keys.reduce({}) do |he,e|
       he_temp = nas[e].keys.reduce({}) do | hm, m |
-        hm[m]=nas[e][m] if nas[e][m]<date
+        if nas[e][m]<date
+          hm[m]=nas[e][m]
+          puts date
+          puts nas[e][m]
+        end
         hm
       end
       he[e] = he_temp if he_temp != {}
